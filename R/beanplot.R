@@ -126,7 +126,7 @@ function (..., bw = "SJ-dpi", kernel = "gaussian", cut = 3, cutmin = -Inf,
     #plot windows and axes
     axespars <- lapply(mcall[base::names(mcall) %in% c("xaxt", 
         "yaxt", "las", "cex.axis", "col.axis", "format", "tick", 
-        "xaxp", "yaxp")], eval, parent.frame())
+        "xaxp", "yaxp", "font.axis")], eval, parent.frame())
     if (!add) {
         if (!is.numeric(xlim)) {
             if (side == 2) 
@@ -200,7 +200,7 @@ function (..., bw = "SJ-dpi", kernel = "gaussian", cut = 3, cutmin = -Inf,
     #finally, prints labels
     titlepars <- lapply(mcall[base::names(mcall) %in% c("main", 
         "sub", "xlab", "ylab", "cex.main", "col.main", "cex.lab", 
-        "col.lab", "cex.sub", "col.sub")], eval, parent.frame())
+        "col.lab", "cex.sub", "col.sub", "font.main", "font.lab")], eval, parent.frame())
     do.call("title", titlepars)
 
     #return generated data that can be used for subsequent calls
